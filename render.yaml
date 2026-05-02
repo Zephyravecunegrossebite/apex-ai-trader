@@ -1,0 +1,23 @@
+services:
+  - type: worker
+    name: apex-ai-trader
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: TWELVE_DATA_KEY
+        sync: false
+      - key: RR_RATIO
+        value: "2.0"
+      - key: RISK_PCT
+        value: "2.0"
+      - key: TIMEFRAME
+        value: "60"
+      - key: SCAN_INTERVAL
+        value: "300"
+      - key: LANG
+        value: "fr"
